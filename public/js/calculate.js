@@ -17,7 +17,8 @@ function displayZeit(){
 	var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
 
 	//var summe = ((htergebnis * 8)/ uvI) * lsergebnis;
-	var secunden = htergebnis  * lsergebnis * 60;
+	//var secunden = htergebnis  * lsergebnis * 60;
+	var secunden = ((htergebnis * 8)/ (uvI * lsergebnis)) * 60;
 	var minute = Math.floor(secunden/60);
 	secunden %= 60;
 	var hour = Math.floor(minute/60);
