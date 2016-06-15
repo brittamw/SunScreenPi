@@ -1,0 +1,19 @@
+body{
+	background-color:#eecbad;
+	font-family:arial;
+	padding-left: 10%;
+	padding-right:  10%;
+	color:#776556;
+	
+	
+}
+h1,h2,h3{
+	text-align: center;
+}
+* {
+    box-sizing: border-box;
+}
+.text{
+	text-align: justify;
+}
+

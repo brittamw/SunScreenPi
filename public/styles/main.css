@@ -1,0 +1,109 @@
+body, html{
+	background-color:#fae596 ;
+	font-family:arial;
+	margin: auto;
+	
+}
+a{
+	text-decoration: none;
+	color:	#383838;
+}
+select{
+	border: 0;
+	font-family:arial;
+	color:	#383838;
+	
+}
+
+option{
+	border: 0;
+	font-family:arial;
+	color: #383838;
+	
+}
+
+.header {
+    background-color: ##fae596;
+    color: white;
+    font-size: 30px;
+	text-align: center;
+	padding: 10px;
+}
+.pinkish{
+	background-color: #ffefd5;
+	font-size: 20px;
+	padding:10px;
+	text-align: center;
+	font-family: arial;
+}	
+
+.red{
+	background-color: #ffdab9;
+	font-size: 30px;
+	padding: 10px;
+	text-align: center;
+	font-family: arial;
+	
+}
+.lavender{
+	background-color: #eecbad;
+	font-size: 30px;
+	padding: 10px;
+	text-align: center;
+	font-family: arial;
+}
+
+
+
+/* Zeit berechnen Button */
+.button {
+    background-color:#75a375;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.infobtn{
+	
+display: inline-block;
+    position: relative;
+    margin: 10px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    font: bold 12px/25px Arial, sans-serif;
+	text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+ 
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+ 
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+ 
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+	
+	color: #3e5706;
+    background: #ffffe0;
+	}
+.test{
+	float: left;
+}
+.test1{
+	float: right;
+}
+
+
+
+
+
+
+

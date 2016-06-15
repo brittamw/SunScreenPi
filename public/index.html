@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<meta charset="UTF-8">
+		<title>SunScreenPi</title>
+		<link href="styles/main.css" rel = "stylesheet" type = text/css>
+		
+		<script type = "text/JavaScript" src="js/calculate.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type = "text/JavaScript" src = "code.js"></script>
+	</head>
+	<body onload = "initialize()">
+		
+		<h1 class = "header"><i class="fa fa-certificate"></i>SunScreenPi<i class="fa fa-certificate"></i></h1>
+		
+		<div class="pinkish" id = "uv">
+			<p id = "aktIndex" >UV-Index:</p>
+			
+			
+		</div>
+				
+
+		<div class ="red">
+			<select class ="red" id = "hauttypen">
+				<option>Hauttyp</option>
+				<option value = "7" > Hauttyp 1</option>
+				<option value = "15"> Hauttyp 2</option>
+				<option value = "25"> Hauttyp 3 </option>
+				<option value = "35"> Hauttyp 4 </option>
+				<option value = "45"> Hauttyp 5 </option>
+				<option value = "60"> Hauttyp 6 </option>
+			</select>
+			<form action="types/hauttyp.html"class = "test1">
+				<input  class = "infobtn"type="submit" value="Haut Infos">
+			</form>	
+			<form action = "types/hauttest.html" class = "test">
+					<input class = "infobtn"type = "submit" value = "Hauttypen-Test" >			<!--style="color:white;background-color:#ffb6c1"-->
+			</form>	
+			
+		</div>
+	
+		<div class= "lavender"> 
+			<select class = "lavender" id = "lichtschutz">
+				<option>Lichtschutzfaktor</option>
+				<option value = "1">Kein LSF</option>
+				<option value = "6">LSF 6</option>
+				<option value = "10">LSF 10</option>
+				<option value = "15">LSF 15</option>
+				<option value = "20">LSF 20</option>
+				<option value = "25">LSF 25</option>
+				<option value = "30">LSF 30</option>
+				<option value = "50">LSF 50</option>
+			</select>
+			
+			<form action="types/lsf.html" class = "test1">
+				<input class = "infobtn"type="submit" value="Info">
+			</form>	
+			
+		</div>
+		
+		<div class = "button">
+			<button class = "button" id = "berechne" onClick = displayZeit()>Zeit berechnen</button>
+			<p id="zeit"></p>
+		</div>
+		<div><span id="time"></span></div>
+		
+		
+	</body>
+
+</html>
