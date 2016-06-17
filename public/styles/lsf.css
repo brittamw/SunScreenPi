@@ -1,19 +1,23 @@
 body{
 	background-color:#eecbad;
 	font-family:arial;
-	padding-left: 10%;
-	padding-right:  10%;
+	padding-left: 15%;
+	padding-right:  15%;
 	color:#776556;
 	
 	
 }
 h1,h2,h3{
 	text-align: center;
+	font-size: 50px;
+	padding: 5%;
 }
 * {
     box-sizing: border-box;
 }
 .text{
 	text-align: justify;
+	font-size: 30px;
+	
 }
 

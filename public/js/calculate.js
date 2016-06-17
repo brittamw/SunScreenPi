@@ -8,7 +8,7 @@ function displayZeit(){
 	var uvI = data;
 		
 	});*/
-	var uvI = 9;
+	var uvI = 8; // 8 als Wert für einen Sommertag ohne Wolken mittags in Mitteleuropa
 	
 	var hauttyp = document.getElementById("hauttypen");
 	var lichtschutz = document.getElementById("lichtschutz");
@@ -28,7 +28,7 @@ function displayZeit(){
 	minute %= 60;
 
 	document.getElementById("berechne").addEventListener("click", displayZeit);
-	document.getElementById("zeit").innerHTML = "Du darfst "+ hour + " Stunden " + minute + "Minuten" + secunden +"Sekunden in der Sonne sein";
+	document.getElementById("zeit").innerHTML = "Du darfst "+ hour + " Stunden " + minute + " Minuten " + secunden +" Sekunden in der Sonne sein";
 
 	
 	
