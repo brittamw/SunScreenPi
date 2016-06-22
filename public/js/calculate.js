@@ -30,11 +30,12 @@ function displayZeit(){
 	document.getElementById("berechne").addEventListener("click", displayZeit);
 	document.getElementById("zeit").innerHTML = "Du darfst "+ hour + " Stunden " + minute + " Minuten " + secunden +" Sekunden in der Sonne sein";
 
-	
+	var remainingTime = ((htergebnis * 8)/(uvI) * lsergebnis) * 60, display = document.querySelector('#time');
+	startTimer(remainingTime, display);
 	
 	
 }
-/*function startTimer(duration, display) {
+function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
@@ -51,8 +52,4 @@ function displayZeit(){
     }, 1000);
 }
 
-	window.onload = function () {
-		var fiveMinutes = 6*60, display = document.querySelector('#time');
-		startTimer(fiveMinutes, display);
-		
-};*/
+	
