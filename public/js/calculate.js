@@ -28,23 +28,26 @@ function displayZeit(){
 	minute %= 60;
 
 	document.getElementById("berechne").addEventListener("click", displayZeit);
-	document.getElementById("zeit").innerHTML = "Du darfst "+ hour + " Stunden " + minute + " Minuten " + secunden +" Sekunden in der Sonne sein";
 
-	var remainingTime = ((htergebnis * 8)/(uvI) * lsergebnis) * 60, display = document.querySelector('#time');
+	var remainingTime = ((htergebnis * 8)/(uvI) * lsergebnis) *60, display = document.querySelector('#time');
 	startTimer(remainingTime, display);
 	
 	
 }
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+    var timer = duration, hours, minutes, seconds;
     setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
+		
+		hours = parseInt((timer/60/60)%24, 10);
+        minutes = parseInt((timer / 60)%60, 10);
         seconds = parseInt(timer % 60, 10);
-
+		
+		//braucht man leading zero?
+		hours = hours < 10 ? "0" + hours : hours;
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+        display.textContent = hours + ":"+minutes + ":" + seconds;
 
         if (--timer < 0) {
             timer = duration;
