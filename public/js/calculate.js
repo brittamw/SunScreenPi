@@ -1,37 +1,25 @@
 
-
 function displayZeit(){
-	/*var socket = io.connect();
+	var socket = io.connect();
 	
 	socket.on("SunScreenPi", function(data){
 		
 	var uvI = data;
-		
-	});*/
-	var uvI = 8; // 8 als Wert für einen Sommertag ohne Wolken mittags in Mitteleuropa
 	
 	var hauttyp = document.getElementById("hauttypen");
 	var lichtschutz = document.getElementById("lichtschutz");
 	var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
 	var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
-
-
-	
 	
 	//var summe = ((htergebnis * 8)/ uvI) * lsergebnis; formel für berechnung mit UV Index
 	//var secunden = htergebnis  * lsergebnis * 60;
 	
-	var secunden = ((htergebnis * 8)/(uvI) * lsergebnis) * 60;
-	var minute = Math.floor(secunden/60);
-	secunden %= 60;
-	var hour = Math.floor(minute/60);
-	minute %= 60;
-
 	document.getElementById("berechne").addEventListener("click", displayZeit);
-
 	var remainingTime = ((htergebnis * 8)/(uvI) * lsergebnis) *60, display = document.querySelector('#time');
 	startTimer(remainingTime, display);
-	
+
+	});
+	//var uvI = 8; // 8 als Wert für einen Sommertag ohne Wolken mittags in Mitteleuropa, für Demonstration ohne Sensor
 	
 }
 function startTimer(duration, display) {
@@ -47,8 +35,8 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = hours + ":"+minutes + ":" + seconds;
-
+        display.textContent = "Du darfst " + hours + ":"+minutes + ":" + seconds + " Stunden in der Sonne bleiben";
+		console.log("hallo");
         if (--timer < 0) {
             timer = duration;
         }
