@@ -1,2 +1,0 @@
-# SunScreenPi
-MOSY/ITS

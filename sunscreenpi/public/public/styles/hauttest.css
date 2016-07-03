@@ -1,0 +1,52 @@
+body, html{
+	background-color:#FFA200;
+	font-family:arial;
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 20px;
+	
+}
+h1,h2,h3{
+	
+	
+}
+
+div{
+	padding: 5px;
+}
+.header{
+	background-color: #FFA200;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+	margin: 0px;
+	
+}
+.control-group{
+	
+    border: none;
+    color: black;
+    padding: 10px ;
+    
+    text-decoration: none;
+    font-size: 20px;
+
+}
+.control-label{
+	font-weight: bold;
+}
+.controls{
+
+}
+.button{
+	background-color: #0084FF;
+    border: none;
+    color: white;
+    padding: 5% ;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+	
+}
+

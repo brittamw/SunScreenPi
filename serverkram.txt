@@ -1,3 +1,0 @@
-in raspi noch namespaces einfügen --> ip adressen
-
-servername: sunscreenpi passwort sunscreenpi

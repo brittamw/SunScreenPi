@@ -1,0 +1,94 @@
+body{
+	background-color: #FFA200;
+	color:white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h3{
+	font-size: 60px;
+	text-align:center;
+}
+p{
+	font-size:20px;
+	text-align:left;
+}
+span{
+	font-size:40px;
+	text-align:center;
+	display:inline-block;
+}
+
+button.accordion {
+    background-color: #FFA200;
+    color: white;
+    cursor: pointer;
+    padding: 15%;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+	font-size: 50px;
+}
+
+button.accordion:after {
+    content: '\02795';
+    font-size: 20px;
+    
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796";
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #FFC000;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+
+div.panel1 {
+    padding: 0 18px;
+    	
+    display: none;
+}
+div.panel2 {
+    padding: 0 18px;
+    
+    display: none;
+}
+div.panel3 {
+    padding: 0 18px;
+    
+    display: none;
+}
+div.panel4 {
+    padding: 0 18px;
+    
+    display: none;
+}
+/* The "show" class is added to the accordion panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel1.show {
+    display: block !important;
+	font-size: 20px;
+	color:black;
+	background: url(ht1.jpg);
+	text-align:left;
+}
+div.panel2.show{
+    display: block !important;
+	font-size: 20px;
+	background: url(ht2.jpg);
+}
+div.panel3.show{
+    display: block !important;
+	font-size: 20px;
+	background: url(ht3.jpg);
+}
+div.panel4.show{
+    display: block !important;
+	font-size: 20px;
+	background: url(portugalbeach8.jpg);
+}

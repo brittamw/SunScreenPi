@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset="UTF-8">
+		<title>SunScreenPi</title>
+		<link href="../styles/hauttest.css" rel = "stylesheet" type = text/css>
+		
+		<script type = "text/JavaScript" src="hauttest.js" ></script>
+	</head>
+	<body>
+	<div class = "header">
+	<h1>Finde heraus welcher Hauttyp du bist!</h1>
+	<p>Um deinen individuellen Hauttypen festzustellen, beantworte einfach diese 10 Fragen!</p>
+	</div>
+	<div class="control-group" id = "farbe">
+				<label class = "control-label">1. Welchen Farbton weist deine unbestrahlte Haut auf? (Vergleiche deine Arm-Innenseite)</label>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "farbe" >Rötlich
+							</input>
+						</label>	
+					</div>
+					
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "farbe" >Weißlich
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "farbe" >Leicht beige
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "farbe" >Bräunlich
+							</input>
+						</label>
+					</div>
+				</div>	
+				<br>
+			<div class="control-group" id = "sommersprossen">
+				<label class = "control-label">2. Hat deine Haut Sommersprossen?</label>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "sommersprossen">Ja, viele
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name ="sommersprossen">Ja, einige
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name ="sommersprossen">Ja, aber nur vereinzelt
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name ="sommersprossen">Nein
+							</input>
+						</label>
+					</div>
+				</div>		
+				<br>
+			<div class="control-group" id = "gesicht">	
+				<label class = "control-label">3. Wie reagiert deine Gesichtshaut auf Sonne?</label>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "gesicht">Sehr empfindlich, meist Hautspannen
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "gesicht">Empfindlich, teilweise Hautspannen
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "gesicht">Normal empfindlich, selten Hautspannen
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "gesicht">Unempfindlich, kein Hautspannen
+							</input>
+						</label>
+					</div>
+			</div>		
+					<br>
+			<div class="control-group" id = "zeit">			
+				<label class = "control-label">4. Wie lange kannst du im Frühsommer in Deutschland oder in Mitteleuropa (Meeresspiegelhöhe) mittags bei wolkenlosem
+														Himmel sonnenbaden, ohne einen Sonnenbrand zu bekommen?</label>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "zeit">Weniger als 10 Minuten
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "zeit">Zwischen 10 und 20 Minuten
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "zeit">Zwischen 25 und 40 Minuten
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "zeit">Länger als 40 Minuten
+							</input>
+						</label>
+					</div>	
+			</div>	
+					<br>
+			<div class="control-group" id = "reaktion">	
+				<label class = "control-label">5. Wie reagiert deine Haut auf ein längeres Sonnenbad (ohne Sonnencreme)?</label>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "reaktion">Stets mit Sonnenbrand
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "reaktion">Meist mit Sonnenbrand
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "reaktion">Oftmals mit Sonnenbrand
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "reaktion">(Fast) nie mit Sonnenbrand
+							</input>
+						</label>
+					</div>
+			</div>		
+					<br>
+			<div class="control-group" id = "sonnenbrand">			
+				<label class = "control-label">6. Wie wirkt sich bei dir ein Sonnenbrand aus?</label>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "sonnenbrand">Kräftige Rötung, schmerzhaft, oft Bläschenbildung, danach schält sich die Haut
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "sonnenbrand">Deutliche Rötung, danach schält sich die Haut meistens</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "sonnenbrand">Leichte Rötung, danach schält sich die Haut manchmal
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "sonnenbrand">(Fast) keine Rötung oder Hautschälen
+							</input>
+						</label>
+					</div>
+			</div>		
+					<br>
+			<div class="control-group" id = "braun">
+				<label class = "control-label">7. Kann man bei dir nach einmaligem längeren Sonnenbad anschließend einen Bräungseffekt sehen?</label>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "braun">Nein, nie
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "braun">Meist nicht
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "braun">Ja, oft
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "braun">Ja, immer
+							</input>
+						</label>
+					</div>
+			</div>		
+					<br>
+			<div class="control-group" id = "entwicklung">		
+				<label class = "control-label">8. Wie entwickelt sich deine Hautfarbe nach mehrmaligen Sonnenbädern?</label>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "entwicklung">Kaum oder gar keine Bräunung
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "entwicklung">Leichte Bräunung
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "entwicklung">Fortschreitende deutlich werdende Bräunung
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "entwicklung">Schnell einsetzende, tiefe Bräunung
+							</input>
+						</label>
+					</div>
+			</div>	
+					<br>
+			<div class="control-group" id = "haarfarbe">		
+				<label class = "control-label">9. Welche Angabe entspricht am ehesten deiner Haarfarbe?</label>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "haarfarbe">Rötlich bis rötlich braun
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "haarfarbe">Hellblond bis blond
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "haarfarbe">Dunkelblond bis braun
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "haarfarbe">Dunkelbraun bis schwarz
+							</input>
+						</label>
+					</div>	
+			</div>		
+					<br>
+			<div class="control-group" id = "augen">		
+				<label class = "control-label">10. Welche Farbe haben deine Augen?</label>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "1" name = "augen">Hellblau, Hellgrau oder Hellgrün (oder daraus gemischt)
+							</input>
+						</label>
+					</div>	
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "2" name = "augen">Blau, Grau oder Grün (oder daraus gemischt)
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "3" name = "augen">Hellbraun oder helle Mischungen mit Braun
+							</input>
+						</label>
+					</div>
+					<div class = "controls">
+						<label class = "radio">
+							<input type = "radio" value = "4" name = "augen">Dunkelbraun bis Schwarz
+							</input>
+						</label>
+					</div>
+			</div>			
+
+					<div class = "button">
+					<button class = "button" id = "auswerten" onClick = displayType()><p id = "typ">Auswerten</p></button>
+					
+					</div>	
+			<p id = "expl"></p>
+		
+	</body>
+
+</html>
