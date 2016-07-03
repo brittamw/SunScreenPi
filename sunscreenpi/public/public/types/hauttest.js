@@ -30,7 +30,7 @@ function displayType(){
 		
 	}else{
 	
-	alert("Bitte beantworte alle 10 Fragen!");
+	alert("Bitte beantworte zuerst alle 10 Fragen!");
 	}
 	
 	

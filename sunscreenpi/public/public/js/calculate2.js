@@ -75,6 +75,34 @@ function countdown (seconds, target) {
   calculateAndShow.Timer(1000, Infinity, completed);
 }
 
+function countUp (seconds, target) {
+  var element = document.getElementById(target);
+ 
+  var calculateAndShowUp = function () {
+  
+	
+    if (seconds >= 0) {
+      var h = Math.floor(seconds / 3600);
+      var m = Math.floor((seconds % 3600) / 60);
+      var s = seconds % 60;
+      element.innerHTML=
+        leadingzero(h) + ':' +
+        leadingzero(m) + ':' +
+        leadingzero(s);
+      seconds++;
+    } else {
+      return false;
+    }
+  };
+ 
+ 
+  var completed = function () {
+    element.innerHTML = "<strong>Raus aus der Sonne!<\/strong>";
+  };
+ //Methode Timer starten (Methode erhalten durch prototypische Erweiterung
+  calculateAndShowUp.Timer(1000, Infinity, completed);
+}
+
 
 
 function displayZeit() {
@@ -87,31 +115,10 @@ function displayZeit() {
 	var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60//formel für berechnung mit UV Index, zeit in sekunden
 	
 	new countdown(summe.toFixed(0), 'counter1');
+	new countUp(0, 'counter2');
 	document.getElementById("berechne").addEventListener("click", displayZeit);
 	
 		
-};
-		
-		var c = 0;
-		var t;
-		var timer_is_on = 0;
-
-		function timedCount() {
-			document.getElementById("counter2").value = c;
-			c = c + 1;
-			t = setTimeout(function(){ timedCount() }, 1000);
-		}
-
-		function startCount() {
-			if (!timer_is_on) {
-				timer_is_on = 1;
-				timedCount();
-			}
-		}
-
-		function stopCount() {
-			clearTimeout(t);
-			timer_is_on = 0;
-		}
-		
+}
+	
 //Quelle:https://wiki.selfhtml.org/wiki/JavaScript/Anwendung_und_Praxis/komfortable_Timer-Funktion
