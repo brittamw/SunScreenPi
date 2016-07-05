@@ -110,9 +110,9 @@ function displayZeit() {
 	jetzt = date.getTime()/1000;
 	console.log(jetzt);
 	
-	//var uvI = durchschnittCalc;
-	
-	var uvI = 7 ;//durchschnittCalc;
+	var uvI = durchschnitt;
+	console.log("abc"+durchschnitt);
+	//var uvI = 7 ;//durchschnittCalc;
 	var hauttyp = document.getElementById("hauttypen");
 	var lichtschutz = document.getElementById("lichtschutz");
 	var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
