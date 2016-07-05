@@ -18,5 +18,13 @@ module.exports ={
 			})
 		})
 		
+	},
+	getAuthors(){
+		return ["","",""]
+	}, getTitle() {
+		return "title"
+	},
+	getInformation() {
+		return "Kurzbeschreibung"
 	}
 }

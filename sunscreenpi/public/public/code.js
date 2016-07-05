@@ -11,7 +11,6 @@ function initialize(){
 	myjetzt = myjetzt -60 ; // Startwerte von einer Minute 
 	
 		if(typeof jetzt != "undefined"){
-			//console.log("test");
 			
 			for (var property in data) {
 				if (data.hasOwnProperty(property)) {
@@ -23,16 +22,12 @@ function initialize(){
 						count++;
 						summe += parseFloat(data[property]);	//Summe, alle Uv indexe addiert
 						
-						
 						//console.log("Die Summe ist "+ summe);
 						//console.log(count);
 						
 						durchschnitt = summe/count;
 						
-						
-						
 						console.log("Der Durchschnitt ist: "+ durchschnitt.toFixed(2));
-						//summeaussen = summe;
 						document.getElementById("aktIndex").innerHTML = "UV-Index: "+ durchschnitt.toFixed(0);
 						
 					}
@@ -48,7 +43,6 @@ function initialize(){
 
 							count++;
 							summe += parseFloat(data[property]);	//Summe, alle Uv indexe addiert
-							
 							
 							//console.log("Die Summe ist "+ summe);
 							//console.log(count);

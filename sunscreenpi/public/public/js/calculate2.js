@@ -110,21 +110,23 @@ function displayZeit() {
 	jetzt = date.getTime()/1000;
 	console.log(jetzt);
 	
-	var uvI = durchschnitt;
-	console.log("abc"+durchschnitt);
-	//var uvI = 7 ;//durchschnittCalc;
-	var hauttyp = document.getElementById("hauttypen");
-	var lichtschutz = document.getElementById("lichtschutz");
-	var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
-	var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
-	
-	var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60//formel für berechnung mit UV Index, zeit in sekunden
-	
-	new countdown(summe.toFixed(0), 'counter1');
-	new countUp(0, 'counter2');
-	document.getElementById("berechne").addEventListener("click", displayZeit);
-	
+	var uvI = durchschnitt;	
+
+	//if(uvI = durchschnitt){
+		var hauttyp = document.getElementById("hauttypen");
+		var lichtschutz = document.getElementById("lichtschutz");
+		var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
+		var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
 		
+		var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60//formel für berechnung mit UV Index, zeit in sekunden
+		
+		new countdown(summe.toFixed(0), 'counter1');
+		new countUp(0, 'counter2');
+		document.getElementById("berechne").addEventListener("click", displayZeit);
+	//}else{
+		
+	//}	
 }
+
 	
 //Quelle:https://wiki.selfhtml.org/wiki/JavaScript/Anwendung_und_Praxis/komfortable_Timer-Funktion
