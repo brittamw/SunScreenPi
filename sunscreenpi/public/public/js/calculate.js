@@ -4,10 +4,10 @@ function displayZeit(){
 	var date = new Date();
 	jetzt = date.getTime()/1000;
 	console.log(jetzt);
-	durchschnittCalc = 7;
-	var uvI = durchschnittCalc;			//Wert aus Durchschnitt in uvi schreiben
+	//durchschnittCalc = 7;
+	//var uvI = durchschnittCalc;			//Wert aus Durchschnitt in uvi schreiben
 	
-	//uvI = 8; // 8 als Wert für einen Sommertag ohne Wolken mittags in Mitteleuropa, für Demonstration ohne Sensor
+	uvI = 8; // 8 als Wert für einen Sommertag ohne Wolken mittags in Mitteleuropa, für Demonstration ohne Sensor
 	var hauttyp = document.getElementById("hauttypen");
 	var lichtschutz = document.getElementById("lichtschutz");
 	var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
@@ -18,8 +18,9 @@ function displayZeit(){
 	
 	document.getElementById("berechne").addEventListener("click", displayZeit);
 	var remainingTime = ((htergebnis * 8)/(uvI) * lsergebnis) *60;
-
-	startTimer(remainingTime, display);display = document.querySelector('#time');
+	display = document.querySelector('#time');
+	startTimer(remainingTime, display);
+	
 	console.log(remainingTime);
 	
 	

@@ -106,7 +106,13 @@ function countUp (seconds, target) {
 
 
 function displayZeit() {
-	var uvI = durchschnittCalc;
+	var date = new Date();
+	jetzt = date.getTime()/1000;
+	console.log(jetzt);
+	
+	//var uvI = durchschnittCalc;
+	
+	var uvI = 7 ;//durchschnittCalc;
 	var hauttyp = document.getElementById("hauttypen");
 	var lichtschutz = document.getElementById("lichtschutz");
 	var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
