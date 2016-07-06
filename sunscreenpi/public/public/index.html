@@ -6,10 +6,11 @@
 	<meta charset="UTF-8">
 		<title>SunScreenPi</title>
 		<link href="styles/main.css" rel = "stylesheet" type = text/css>
+		<script type = "text/JavaScript" src="js/calculate2.js"></script>
 		<script type = "text/JavaScript" src = "code.js"></script>
 		<!--<script type = "text/JavaScript" src="js/calculate.js"></script>-->
 		<script src="/socket.io/socket.io.js"></script>
-		<script type = "text/JavaScript" src="js/calculate2.js"></script>
+		
 	</head>
 	<body onload = "initialize()">
 		
@@ -61,10 +62,10 @@
 		</div>
 		
 		<div class = "button">
-			<button class = "button" id = "berechne" onClick = "displayZeit();">Zeit berechnen</button>		<!--this.disabled=true-->
+			<button class = "button" id = "berechne" onClick = "displayZeit();this.disabled=true">Zeit berechnen</button>		<!---->
 			<span id="counter1"></span>	
 			<span id ="counter2"></span>
-			<span id ="counter3"></span>
+			
 			
 		</div>
 		<div></div>

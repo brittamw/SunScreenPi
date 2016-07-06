@@ -51,7 +51,6 @@ function countdown (seconds, target) {
   var element = document.getElementById(target);
  
   var calculateAndShow = function () {
-  
 	//solange seconds noch nicht null, schreibt sekundenwert ins element
     if (seconds >= 0) {
       var h = Math.floor(seconds / 3600);
@@ -64,6 +63,7 @@ function countdown (seconds, target) {
       seconds--;
     } else {
       return false;
+	  
     }
   };
  
@@ -74,10 +74,10 @@ function countdown (seconds, target) {
  //Methode Timer starten (Methode erhalten durch prototypische Erweiterung
   calculateAndShow.Timer(1000, Infinity, completed);
 }
-
+//Brauchen wir nicht mehr, aber lassen wir mal stehen ;)
 function countUp (seconds, target) {
   var element = document.getElementById(target);
- 
+	
   var calculateAndShowUp = function () {
   
 	
@@ -86,16 +86,18 @@ function countUp (seconds, target) {
       var m = Math.floor((seconds % 3600) / 60);
       var s = seconds % 60;
       element.innerHTML=
-        leadingzero(h) + ':' +
-        leadingzero(m) + ':' +
-        leadingzero(s);
+        //leadingzero(h) + ':' +
+        //leadingzero(m) + ':' +
+        //leadingzero(s);
       seconds++;
+	  //console.log(seconds);
+	  
     } else {
       return false;
     }
   };
  
- 
+
   var completed = function () {
     element.innerHTML = "<strong>Raus aus der Sonne!<\/strong>";
   };
@@ -104,28 +106,76 @@ function countUp (seconds, target) {
 }
 
 
+function startTimer(duration, display) {
+    var timer = duration, hours, minutes, seconds;
+    setInterval(function () {
+		
+		hours = parseInt((timer/60/60)%24, 10);
+        minutes = parseInt((timer / 60)%60, 10);
+        seconds = parseInt(timer % 60, 10);
+		
+		//braucht man leading zero?
+		hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent =  hours + ":"+minutes + ":" + seconds;
+		
+        if (--timer < 0) {
+            display.textContent = "Raus aus der Sonne!";
+        }
+    }, 1000);
+}
+
+
+
 
 function displayZeit() {
+
+	//function sleep(time){
+		//return new Promise((resolve)=>setTimeout(resolve, time));
+	//}
+	interval = setInterval(Countup2, 1000);
+	count = 0;
+	function Countup2(){		
+		count++;
+		//console.log(count);
+	}
+	
 	var date = new Date();
 	jetzt = date.getTime()/1000;
 	console.log(jetzt);
 	
-	var uvI = durchschnitt;	
+	//var uvI = 7; //zum testen ohne Raspi
+	uvI = durchschnitt;	
+	var hauttyp = document.getElementById("hauttypen");
+	var lichtschutz = document.getElementById("lichtschutz");
+	var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
+	var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
+	var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60//formel für berechnung mit UV Index, zeit in sekunden
+		
+	new countdown(summe.toFixed(0), 'counter1'); //Zeit, die man in der Sonne bleiben darf, solange UVI "recht" konstant bleibt
+	
+}
 
-	//if(uvI = durchschnitt){
-		var hauttyp = document.getElementById("hauttypen");
-		var lichtschutz = document.getElementById("lichtschutz");
-		var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
-		var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
+//Wenn durchschnitt sich ändert, aktualisieren aufrufen, neuer countdowm - bereits abgelaufene Zeit --> noch verbleibende Zeit
+//Wo aktualisiere() aufrufen??
+function aktualisiere(){
+	
+	//var uvI = 7;
+	var uvI = durchschnitt;	
+	var hauttyp = document.getElementById("hauttypen");
+	var lichtschutz = document.getElementById("lichtschutz");
+	var htergebnis = hauttyp.options[hauttyp.selectedIndex].value;
+	var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
 		
-		var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60//formel für berechnung mit UV Index, zeit in sekunden
-		
-		new countdown(summe.toFixed(0), 'counter1');
-		new countUp(0, 'counter2');
-		document.getElementById("berechne").addEventListener("click", displayZeit);
-	//}else{
-		
-	//}	
+	var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60		//Zeit in Sekunden
+	
+	document.getElementById("counter1").innerHTML = "";
+	display = document.querySelector('#counter2');
+	startTimer((summe-count).toFixed(0), display);
+	
+	
 }
 
 	

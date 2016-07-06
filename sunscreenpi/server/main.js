@@ -20,11 +20,12 @@ module.exports ={
 		
 	},
 	getAuthors(){
-		return ["","",""]
+		return ["Anna Höhnke","Anja Braun","Hannes Herda", "Britta Walter"]
 	}, getTitle() {
-		return "title"
+		return "SunScreenPi"
 	},
 	getInformation() {
-		return "Kurzbeschreibung"
+		return "Nie wieder Sonnenbrand mit SunScreenPi! SunScreenPi ermittelt den aktuellen Uv-Index" + 
+		"und berechnet dir deine individuelle Zeit, die du sonnenbaden kannst, ohne einen Sonnebrand zu bekommen"
 	}
 }
