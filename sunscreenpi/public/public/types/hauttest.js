@@ -24,7 +24,7 @@ function displayType(){
 			
 		var typ = summe/10;
 		document.getElementById("typ").innerHTML = "Deine Punktzahl: " + typ;
-		document.getElementById("expl").innerHTML = "Die Zahl vor dem Komma gibt deinen ungefähren Hauttypen an. Hast du z.B. 2,4 erreicht, ist dein Hauttyp näher an 2 als an 3. Bei einem Ergebnis von 2,8 hingegen tendiert deine Haut mehr zum Hauttyp 3. Falls du zwischen zwei Hauttypen eingeordnet bist, wähle am besten den niedrigeren, um ganz sicher zu gehen.";
+		//document.getElementById("expl").innerHTML = "Die Zahl vor dem Komma gibt deinen ungefähren Hauttypen an. Hast du z.B. 2,4 erreicht, ist dein Hauttyp näher an 2 als an 3. Bei einem Ergebnis von 2,8 hingegen tendiert deine Haut mehr zum Hauttyp 3. Falls du zwischen zwei Hauttypen eingeordnet bist, wähle am besten den niedrigeren, um ganz sicher zu gehen.";
 		alert("Deine Punktzahl: " + typ +
 				" . Die Zahl vor dem Komma gibt deinen ungefähren Hauttypen an. Hast du z.B. 2,4 erreicht, ist dein Hauttyp näher an 2 als an 3. Bei einem Ergebnis von 2,8 hingegen tendiert deine Haut mehr zum Hauttyp 3. Falls du zwischen zwei Hauttypen eingeordnet bist, wähle am besten den niedrigeren, um ganz sicher zu gehen.");
 		
