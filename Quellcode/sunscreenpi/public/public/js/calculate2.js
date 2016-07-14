@@ -1,5 +1,7 @@
-//Helferfunktion um mehrere countdowns gleichzeitig laufen lassen zu können
+
 var actualTimer;
+
+//Helferfunktion um mehrere countdowns gleichzeitig laufen lassen zu können
 //Methode als Unterobjekt der Funktion
 Function.prototype.Timer = function (interval, calls, onend) { //Zeit zwischen Aufrufen, Anzahl der Aufrufe, funktion die am ende der wdh gesratet wird
 	//Zähler
@@ -20,7 +22,7 @@ Function.prototype.Timer = function (interval, calls, onend) { //Zeit zwischen A
 	
 	//wird am ende aufgerufen
 	//kapselt die als Parameter entgegen genommene onend-Funktion 
-	//und übergibt ihr den Startzeitpunkt, tatsächliche Anzahl der Wiederholungen 
+	//und übergibt ihr den Startzeitpunkt, Anzahl der Wiederholungen 
 	//ursprünglich übergebene Anzahl der Wiederholungen.
 	var endFunction = function () {
 		if (onend) {
@@ -28,7 +30,7 @@ Function.prototype.Timer = function (interval, calls, onend) { //Zeit zwischen A
 		}
 	};
 	
-	
+	//shouldTimerRun false setzen, wenn endTimer aufgerufen
 	this.endTimer = function() {
 		shouldTimerRun=false;
 	
@@ -36,7 +38,7 @@ Function.prototype.Timer = function (interval, calls, onend) { //Zeit zwischen A
 	
 	//zählt, führt callback und sich selbst aus, falls noch nicht bis 0 gezählt wurde
 	//callback noch nicht false
-	//falls Bei null angekommen-->endfunction
+	//falls Bei null angekommen-->endfunction und edit: und solange shouldTimerRun true
 	var timerFunction = function () {
 		count++;
 		if(shouldTimerRun) {
@@ -86,14 +88,15 @@ function countdown (seconds, target) {
     element.innerHTML = "<strong>Raus aus der Sonne!<\/strong>";
 	playSound();
   };
- //Methode Timer starten (Methode erhalten durch prototypische Erweiterung
+	//alten Timer löschen wenn neuer Timer erstellt wird
   if(actualTimer) {
 	actualTimer.endTimer()
   }
+  //Methode Timer starten (Methode erhalten durch prototypische Erweiterung
   actualTimer = calculateAndShow.Timer(1000, Infinity, completed);
   
 }
-//Brauchen wir nicht mehr, aber lassen wir mal stehen ;)
+
 function playSound(){
     var snd = new Audio('');
 
@@ -108,21 +111,20 @@ function playSound(){
 
 function displayZeit() {
 
-	//function sleep(time){
-		//return new Promise((resolve)=>setTimeout(resolve, time));
-	//}
+	//sekunden die seit "Zeit berechnen" Button gedrückt wurde vergangen sind
 	interval = setInterval(Countup2, 1000);
 	count = 0;
 	function Countup2(){		
 		count++;
-		//console.log(count);
 	}
 	
+	//Timestamp
 	var date = new Date();
 	jetzt = date.getTime()/1000;
-	console.log(jetzt);
 	
-	//uvI = 7; //zum testen ohne Raspi
+	//uvI = 7; zum testen ohne Raspi
+	
+	//gobale variable durschnitt und uvI um sie in beiden dateien zu verwenden
 	uvI = durchschnitt;	
 	var hauttyp = document.getElementById("hauttypen");
 	var lichtschutz = document.getElementById("lichtschutz");
@@ -130,12 +132,11 @@ function displayZeit() {
 	var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
 	var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60//formel für berechnung mit UV Index, zeit in sekunden
 		
-	new countdown(summe.toFixed(0), 'counter1'); //Zeit, die man in der Sonne bleiben darf, solange UVI "recht" konstant bleibt
+	countdown(summe.toFixed(0), 'counter1'); //Zeit, die man in der Sonne bleiben darf
 	
 }
 
 //Wenn durchschnitt sich ändert, aktualisieren aufrufen, neuer countdowm - bereits abgelaufene Zeit --> noch verbleibende Zeit
-//Wo aktualisiere() aufrufen??
 function aktualisiere(){
 	
 	//var uvI = 7;
@@ -146,14 +147,10 @@ function aktualisiere(){
 	var lsergebnis = lichtschutz.options[lichtschutz.selectedIndex].value;
 		
 	var summe = ((htergebnis * 8)/(uvI) * lsergebnis) *60		//Zeit in Sekunden
-	
-	//document.getElementById("counter1").innerHTML = "";
-	//display = document.querySelector('#counter2');
-	//startTimer((summe-count).toFixed(0), display);
-	
-	countdown((summe-count).toFixed(0), "counter1");
+
+	countdown((summe-count).toFixed(0), "counter1");			//count --> bereits abgelaufene Zeit vor der Aktualisierung
 	
 }
 
-	
-//Quelle:https://wiki.selfhtml.org/wiki/JavaScript/Anwendung_und_Praxis/komfortable_Timer-Funktion
+//Quellenangabe für prototypische Erweiterung eines Timers:
+//https://wiki.selfhtml.org/wiki/JavaScript/Anwendung_und_Praxis/komfortable_Timer-Funktion
